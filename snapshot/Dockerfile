@@ -20,9 +20,6 @@ RUN . ${RTE_SDK}/dpdk_env.sh; \
   && make install CFLAGS='-O3 -march=native' \
   && make clean
 
-# create database configuration
-RUN ovsdb-tool create /usr/local/etc/openvswitch/conf.db /usr/local/share/openvswitch/vswitch.ovsschema
-
 COPY run_ovs.sh run_ovs.sh
 
 CMD ["./run_ovs.sh"]
